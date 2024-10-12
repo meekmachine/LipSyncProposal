@@ -1,5 +1,3 @@
-
-
 \documentclass[12pt]{article}
 
 % Language setting
@@ -25,9 +23,9 @@
     {\LARGE \bf Master Thesis Proposal} \\
     \vspace{1cm}
     {\Large \bf Jonathan Fields} \\
-    \vspace{3cm}
-    \includegraphics[width=.5\textwidth]{KFSCIS-hrz-COLOR} \\  % Add logo or any relevant image here
-    \vspace{3cm}
+    \vspace{7cm}
+    \includegraphics[width=.5\textwidth]{logo.png} \\[1cm] % First image
+    \vspace{0cm}
     \vfill
     {\Large \today}
 \end{titlepage}
@@ -42,7 +40,7 @@
 Socially interactive agents (SIAs)  - human-like characters able to have  conversations using verbal and nonverbal communication - have been used in various areas of human--computer interaction. 
 Combining SIAs' expressive abilities with the output of large language models (LLMs) enables conversation simulations that directly respond to natural language queries, allowing for more lifelike interactions with less engineering effort (when used without further processing to control their output), when compared to earlier rule-based systems.    
 % While machine learning models are increasingly adept at predicting the mood, sentiment, and affect of human users, the ability to simulate expressive communicative and adaptive human behaviors continues presenting a myriad of challenges in allowing such simulations to act as believable "embodiments" of A.I. agents. 
-One of the factors influencing SIAs' abilities to retain users' engagement hinges on how the auditory and visual stimuli are coordinated.  Thus, in most cases, the experience of listening to these agents' synthesized speech is improved with visual animations of the 3D character's relevant facial movements synchronized with the spoken utterances. We discuss  current challenges in simulating natural lip synchronization, and propose a system to generate realistic lip, tongue, and jaw movements, as well as ancillary face movements, that can be rendered in real-time for 3D socially interactive agents that can interact with users over the World Wide Web.  We also propose an evaluation methodology for analyzing the lip-synchronization results with a user study.
+One of the factors influencing SIAs' abilities to retain users' engagement hinges on how the auditory and visual stimuli are coordinated.  Thus, in most cases, the experience of listening to these agents' synthesized speech is improved with visual animations of the 3D character's relevant facial movements synchronized with the spoken utterances. We discuss current challenges in simulating natural lip synchronization and propose a system to generate realistic lip, tongue, and jaw movements, as well as ancillary face movements, that can be rendered in real-time for 3D socially interactive agents that can interact with users over the World Wide Web.  We also propose an evaluation methodology for analyzing the lip-synchronization results with a user study.
 \end{abstract}
 
 \newpage
@@ -78,7 +76,7 @@ Recent work has aimed to address this problem by incorporating {\bf coarticulati
 One of the most used software for viseme control is Microsoft Cognitive Services TTS, which return viseme codes along with synthesized speech. This approach forces developers to use Microsoft's TTS service for all speech synthesis needs, and does not attempt to remedy the co-articulation problem, nor provide separate lip, jaw and tongue movements, to make the result more realistic.  Futhermore, existing projects have augmented visemes with lip, jaw and tongue movements leading to  more realistic, dynamic simulacra. However, the existing approaches rely on pre-trained models and are designed to be used with animation software packages, instead of web-based simulation.  
 
  This project {\bf aims to bring realistic, human speech synthesis visualizations in real time to the World Wide Web} by leveraging well-formed observations from previous research existing research such as jaw and lip integration and coarticulation correction.
-The goal is to create an algorithm that can take a transcribed text stream and pitch and volume signals from an audio stream and return a stream of viseme codes with activation intensities and durations, combined with additional facial expressions also accompanied by their activation times and durations.  The  output of our algorithm should reflect consideration of how a phoneme's pronunciation may be influenced by preceeding and following sounds (ie. the coarticualtion problem). The output of our algorithm should also reflect consideration of the jaws and lips moving on separate axes to capture various types of speech (ie. whispering, yelling etc). 
+The goal is to create an algorithm that can take a transcribed text stream and pitch and volume signals from an audio stream and return a stream of viseme codes with activation intensities and durations, combined with additional facial expressions also accompanied by their activation times and durations.  The  output of our algorithm should reflect consideration of how a phoneme's pronunciation may be influenced by preceding and following sounds (ie. the coarticualtion problem). The output of our algorithm should also reflect consideration of the jaws and lips moving on separate axes to capture various types of speech (ie. whispering, yelling etc). 
 %By implementing this algorithm within eEVA, we can have more realistic lip-syncing when compared to Microsoft Cognitive Services' viseme codes.
 By combining audio signals from the synthesized speech with phoneme extraction and viseme, our real-time, web-based approach aims to provide a powerful, robust solution for generating dynamic, emotive lip-sync movements on a virtual agent. 
 
@@ -147,7 +145,7 @@ VisFACS built upon the foundation laid by HapFACS, introducing a slider UI and w
 
 \subsection{GPT Super}
 
-The integration of Generative Pre-trained Transformers (GPT) into the eEVA virtual agent framework marked a significant leap forward in the capabilities of these systems. The evolution to GPT Super introduced advanced natural language processing capabilities, enabling virtual agents to engage in free-speech conversations with users.  Pasternark et al. \cite{Pasternak2024} conducted a study demonstrating the application of a 3D multimodal socially interactive agent (SIA) integrated with the Toyota Human Support Robot (HSR). This integration involved utilizing ChatGPT, a GPT-based large language model, to perform active listening during human-robot interactions (HRI). The study showed that the use of GPT Super allowed this virtual agent embedded within a physical robot (the HSR) to detect and express both verbal and non-verbal cues effectively, thereby enhancing user experience and improving rapport-building during interactions. The synthesis of verbal and non-verbal behaviors facilitated more natural and empathetic communication between the robot and human users.
+The integration of Generative Pre-trained Transformers (GPT) into the eEVA virtual agent framework marked a significant leap forward in the capabilities of these systems. The evolution to GPT Super introduced advanced natural language processing capabilities, enabling virtual agents to engage in free-speech conversations with users.  Pasternark et al. \cite{Pasternak20243DListening} conducted a study demonstrating the application of a 3D multimodal socially interactive agent (SIA) integrated with the Toyota Human Support Robot (HSR). This integration involved utilizing ChatGPT, a GPT-based large language model, to perform active listening during human-robot interactions (HRI). The study showed that the use of GPT Super allowed this virtual agent embedded within a physical robot (the HSR) to detect and express both verbal and non-verbal cues effectively, thereby enhancing user experience and improving rapport-building during interactions. The synthesis of verbal and non-verbal behaviors facilitated more natural and empathetic communication between the robot and human users.
 
 The incorporation of GPT Super into the virtual agent framework enabled the development of a socially intelligent robot capable of autonomous, human-like responses. This advancement in HRI demonstrates the potential of GPT Super in creating adaptive virtual agents that can engage users in free-text or free-speech conversations.  
 
@@ -184,7 +182,7 @@ Building on Fisher’s foundation, \textbf{Binnie, Montgomery, and Jackson (1976
 
 \textbf{Massaro (1998)} contributed significantly with his \textit{Fuzzy Logical Model of Perception (FLMP)}, focusing on how auditory and visual cues are integrated during speech perception. Massaro's model has influenced research in the field by demonstrating the importance of combining multiple sources of information—visual and auditory—to create realistic speech animations. His work, which includes the development of the virtual talking face \textit{Baldi}, remains influential in the study of visual speech synthesis and lip-syncing \cite{Massaro1998PerceivingPrinciple}.
 
-Building on these foundations, \textbf{Cappelletta and Harte (2012)} proposed a refined phoneme-to-viseme mapping approach that increased the number of viseme categories to \textbf{20}. Their work focused on improving automatic lipreading systems by capturing subtle visual differences for improved speech recognition accuracy \cite{Cappelletta2012Phoneme-to-visemeRecognition}. \textbf{Xu et al. (2013)} also explored advanced viseme categorization techniques, emphasizing the need for more detailed mappings to account for subtle phonetic distinctions in visual speech \cite{Xu213}.
+Building on these foundations, \textbf{Cappelletta and Harte (2012)} proposed a refined phoneme-to-viseme mapping approach that increased the number of viseme categories to \textbf{20}. Their work focused on improving automatic lipreading systems by capturing subtle visual differences for improved speech recognition accuracy \cite{Cappelletta2012Phoneme-to-visemeRecognition}. \textbf{Xu et al. (2013)} also explored advanced viseme categorization techniques, emphasizing the need for more detailed mappings to account for subtle phonetic distinctions in visual speech \cite{Xu2013AGames}.
 
 \textbf{Taylor et al. (2012)} introduced a novel approach by redefining visemes as \textbf{dynamic units of visual speech}. Instead of relying on static mouth shapes representing phonemes, Taylor’s dynamic visemes accounted for the movement of speech articulators, such as the lips and jaw, over time. This model naturally incorporated coarticulation effects—where adjacent sounds influence the current viseme’s articulation—and addressed the asynchrony between visual and acoustic speech signals. By analyzing a corpus of real speech data, the study demonstrated that dynamic visemes better represent the complexity of visual speech, leading to more accurate and visually pleasing speech animations \cite{Taylor2012DynamicSpeech}. Subjective evaluations in the study confirmed that animations generated with dynamic visemes were consistently preferred over those using static viseme models.
 
@@ -195,11 +193,12 @@ In offline animation production and real-time applications like embodied agents,
 
 \subsection{Microsoft's Viseme Codes in TTS Systems}
 \label{sec:mstts}
-Visemes became integral to text-to-speech technology (TTS), where Microsoft’s Speech SDK, for instance, employs a set of 21 viseme codes—a standard reflecting decades of refinement and practical application \cite{GetLearn}. Microsoft's TTS system utilizes an artificial neural network (ANN)-based approach to generate viseme codes and durations. This process, known as forced alignment, ensures that each viseme aligns accurately with its corresponding phoneme in the speech signal \cite{Xu213}. However, while Microsoft’s viseme codes effectively capture mouth shapes, they do not account for other crucial facial movements, such as brow and forehead actions, which are essential for conveying emotion and emphasis in speech \cite{Massaro1998PerceivingPrinciple, Massaro2000ReviewPrinciple}.
+Visemes became integral to text-to-speech technology (TTS), where Microsoft’s Speech SDK, for instance, employs a set of 21 viseme codes—a standard reflecting decades of refinement and practical application \cite{GetLearn}. Microsoft's TTS system utilizes an artificial neural network (ANN)-based approach to generate viseme codes and durations. This process, known as forced alignment, ensures that each viseme aligns accurately with its corresponding phoneme in the speech signal \cite{Xu2013AGames}. However, while Microsoft’s viseme codes effectively capture mouth shapes, they do not account for other crucial facial movements, such as brow and forehead actions, which are essential for conveying emotion and emphasis in speech \cite{Massaro1998PerceivingPrinciple, Massaro2000ReviewPrinciple}.
 
-In our study, we will adopt Microsoft Cognitive Services' 21 visemes  as the baseline metric for evaluating facial animation and speech synchronization. By using Microsoft’s advanced text-to-speech (TTS) framework, which already integrates well-established phoneme-to-viseme mapping, we ensure consistency and compatibility with widely adopted standards in the field. Moreover, given the viseme category expansions suggested in the work of \cite{Xu213} and \cite{cappelletta2012} , we chose to implement 20 visemes (plus a neutral lip position) in our system. This allows us to strike a balance between capturing subtle phonetic distinctions and maintaining the practical utility needed for real-time applications, ensuring that our system improves both visual speech recognition and facial animation fidelity over Microsft's current offering.
+In our study, we will adopt Microsoft Cognitive Services' 21 visemes  as the baseline metric for evaluating facial animation and speech synchronization. By using Microsoft’s advanced text-to-speech (TTS) framework, which already integrates well-established phoneme-to-viseme mapping, we ensure consistency and compatibility with widely adopted standards in the field. Moreover, given the viseme category expansions suggested in the work of \cite{Xu2013AGames} and \cite{Cappelletta2012Phoneme-to-visemeRecognition}, we chose to implement 20 visemes (plus a neutral lip position) in our system. This allows us to strike a balance between capturing subtle phonetic distinctions and maintaining the practical utility needed for real-time applications, ensuring that our system improves both visual speech recognition and facial animation fidelity over Microsft's current offering.
 
 \subsection{Data-Driven Approaches}
+\label{sec:datadriven}
 Data-driven approaches have gained prominence due to their ability to learn from large datasets and produce highly realistic animations. These methods,   including models like JALI, VisemeNet, and FaceFormer which we discuss next, 
 leverage machine learning techniques to automatically map phonemes to visemes and generate corresponding facial animations.
 
@@ -213,7 +212,7 @@ leverage machine learning techniques to automatically map phonemes to visemes an
 \label{fig:jali-viseme-field}
 \end{wrapfigure}
 
-The JALI  model integrates procedural and data-driven approaches to generate expressive lip-synchronized facial animations. This system is built upon the popular FACS (Facial Action Coding System) framework \cite{F} discussed in Section \ref{sec:relatedResearch}, and its unique feature is the separation of jaw and lip movements, which allows for a more nuanced representation of speech. The JALI workflow takes a speech transcript and audio signal as inputs, and through a combination of forced alignment and audio signal analysis, it generates both viseme codes and action units that are procedurally modulated to animate a 3D character's face.
+The JALI  model integrates procedural and data-driven approaches to generate expressive lip-synchronized facial animations. This system is built upon the popular FACS (Facial Action Coding System) framework \cite{Edwards2020jali-driven, Edwards2016} discussed in Section \ref{sec:relatedResearch}, and its unique feature is the separation of jaw and lip movements, which allows for a more nuanced representation of speech. The JALI workflow takes a speech transcript and audio signal as inputs, and through a combination of forced alignment and audio signal analysis, it generates both viseme codes and action units that are procedurally modulated to animate a 3D character's face.
 
 JALI’s procedural components include the precise control over the jaw and lip on seperate axes, which are modulated based on the audio features like volume, pitch, and formants--those frequency regions of relatively great intensity within a given sound spectrum. Plotting these jaw and lip movement intensities along an x and y axis yields regions consistent with various styles of speech like whispering or yelling. For example, the minimum activation of both jaw and lips would yield a style of speech consistent with ventriloquism, adding slightly more lip activation would yield mumbling wheras slightly more jaw activation would yield murmuring (see Figure \ref{fig:jali-viseme-field}). This approach ensures that the resulting animations are both expressive and realistic, closely matching the performance of professional animators and performance capture systems. The JALI system is designed to be integrative, allowing further artistic refinement, and is particularly useful in environments where performance capture might be impractical or where detailed animator control is desired.
 
@@ -229,7 +228,7 @@ In a benchmark evaluation on the GRID dataset, LipNet demonstrated a 95.2\% sent
 
 Additionally, LipNet's success highlights the importance of sentence-level predictions rather than isolated word-level predictions, which aligns with the goals of our study. By incorporating LipNet's framework or findings, we aim to strengthen the quantitative evaluation section of our work (see Section \ref{sec:eval}), providing a comprehensive assessment of lip synchronization algorithms in natural communication contexts.
 
-\cite{AssaelLIPNET:LIPREADING} further emphasizes the system's ability to generalize across previously unseen speakers (never used in the training set), reporting an 88.6\% accuracy on such data. This ability to generalize beyond the training dataset is critical for real-world applications of lip synchronization and will serve as an important baseline in our quantitative analysis.
+LipNet\cite{AssaelLIPNET:LIPREADING} further emphasizes the system's ability to generalize across previously unseen speakers (never used in the training set), reporting an 88.6\% accuracy on such data. This ability to generalize beyond the training dataset is critical for real-world applications of lip synchronization and will serve as an important baseline in our quantitative analysis.
 
 
 \section{Proposed Approach}
@@ -296,6 +295,28 @@ Once phonemes are mapped to visemes, the next step involves estimating the durat
 \subsection{Audio Signal Extraction for Fine-Tuning}
 To refine viseme durations and introduce more nuanced facial movements, we extract audio signals from the synthesized speech. This approach is informed by  \cite{Taylor2012DynamicSpeech}, which highlighted the importance of incorporating co-articulation effects and dynamic audio cues. By analyzing the pitch, rhythm, and intensity of the audio, our system adjusts viseme timing and intensity. For instance, if a phoneme is emphasized in the speech, the corresponding viseme's duration and intensity will be adjusted to reflect that emphasis, creating more expressive and synchronized lip movements. This differentiation between lip movements (which are phoneme-dependent) and jaw movements (which correlate with pitch and volume) enhances the system’s overall realism.
 
+This phoneme timing information from the audio signal using the \textbf{Pitchy} library for JavaScript \cite{McLeod2005APitch}. Pitchy provides real-time pitch detection and signal analysis directly in the browser. By applying standard signal extraction methods, particularly the Short-Time Fourier Transform (STFT) \cite{Allen1977ASynthesis}, we analyze the audio signal to detect phoneme boundaries and durations. The STFT allows us to represent the audio signal in both time and frequency domains simultaneously, facilitating the identification of phoneme transitions.
+
+The STFT of a discrete-time signal \( x[n] \) is defined as:
+
+\[
+X(\omega, m) = \sum_{n=-\infty}^{\infty} x[n] \, w[n - m] \, e^{-j \omega n}
+\]
+
+where:
+
+\begin{itemize}
+    \item \( X(\omega, m) \) is the STFT of the signal at time \( m \) and angular frequency \( \omega \).
+    \item \( x[n] \) is the input signal.
+    \item \( w[n - m] \) is a window function centered at time \( m \).
+    \item \( e^{-j \omega n} \) represents the complex exponential basis function.
+    \item \( n \) is the time index.
+\end{itemize}
+
+By sliding the window function \( w[n - m] \) across the signal \( x[n] \), we obtain a time-frequency representation of the signal. This representation is instrumental in detecting changes in spectral content corresponding to different phonemes, as phoneme transitions are characterized by distinct frequency patterns over time.
+
+This basic approach may be subject to future adjustments as we fine-tune the approach.
+
 This multi-layered approach ensures the system can maintain low latency while integrating complex audio-visual interactions, crucial for real-time applications like virtual agents or AI-driven conversations.  The absence of model training ensures that our operations remain lightweight and fast. Unlike previous designs that required significant computational resources for real-time processing, our proposed system aims at being optimized for immediate interaction, enabling smooth real-time execution within web environments.
 \section{Proposed Evaluation}
 \label{sec:eval}
@@ -335,9 +356,13 @@ CER = \frac{S + D + I}{C}
 
 where $S$, $D$, and $I$ represent substitutions, deletions, and insertions, and $N$ and $C$ are the total number of words or characters in the reference sample.
 
+To evaluate the intelligibility of the lip-synced videos generated by our method and the baseline methods, we will use the \textbf{LipNet} model \cite{Assael2016LipNet}. Specifically, we will utilize the implementation provided in the GitHub repository maintained by Rizki Armando \cite{RizkiLipNetRepo}, which includes pre-trained weights trained on the GRID corpus.
+
+By employing this pre-trained model, we can efficiently assess the performance of our lip synchronization without the need for extensive training. The LipNet model processes video sequences of lip movements and predicts the corresponding text, allowing us to compute metrics such as Word Error Rate (WER) and Character Error Rate (CER). Since many of the other speech-to-viseme and speech to-lip-position lip-sync models evaluated here \cite{Zhou2018visemenet, Edwards2020jali-driven} also use GRID\cite{Alghamdi2018AViews} (see \ref{sec:datadriven}) and since GRID is noted to have a high rate of accuracy with LipNet, as stated previously in this section, Grid seems like a safe choice that we can u reliably use without exessive trial and error.  If a higher rate of accuracy with the videos of SIAs will be necessary, we also can fine-tune the pretrained model using videos of our own SIAs with accompanying text transcriptions.
+
 \subsubsection{Proposed Analysis for Microsoft Viseme Codes Evaluation}
 
-For Microsoft’s Viseme Codes, we will not expect an exact match but will focus on improving the realism and user experience. We will assess Viseme Alignment Accuracy (VAA) and Viseme Recognition Rate (VRR) in lip-reading tasks, similar to the approach used by \cite{Santos2023ALipreading}.
+For Microsoft’s Viseme Codes, we will not expect an exact match but will focus on improving the realism and user experience--still we can use this metric as baseline for accuracy, since Microsoft's Viseme are proven to have a high rate of accuracy, we expect our approach should show only minor divergence. We will assess Viseme Alignment Accuracy (VAA) and Viseme Recognition Rate (VRR) in lip-reading tasks, similar to the approach used by \cite{Santos2023ALipreading}.
 
 \[
 VAA = \frac{A_{\text{correct}}}{A_{\text{total}}}
@@ -370,62 +395,97 @@ VRR = \frac{v_{\text{correct}}}{v_{\text{total}}}
 The data will be logged via the web-based UI and analyzed to improve the synchronization of viseme animations with speech content.
 
 \subsubsection{Proposed User Study Evaluation}
-
-% In our user study, we will integrate the Tcha-Tokey et al. (2016) questionnaire \cite{TchaTokey2016}, which evaluates various dimensions of user experience in Immersive Virtual Environments (IVEs). This questionnaire will assess components such as presence, immersion, engagement, flow, usability, and emotional response.
-
-% During the VR session, we will intermittently collect conversational feedback. The feedback will be simple and conversational, such as:
-
-% \begin{itemize}
-%     \item "How immersed do you feel right now?"
-%     \item "What part of the environment has been the most engaging for you?"
-%     \item "How comfortable are you with the controls?"
-% \end{itemize}
-
-% This feedback will allow us to capture users’ immediate reactions, complementing the more formal post-session questionnaire.
-
-% After completing the conversation with the agent, participants will fill out the full Tcha-Tokey UX questionnaire. Additionally, we will incorporate open-ended questions to encourage reflection on both positive and negative aspects of the experience. The data gathered will offer both qualitative and quantitative insights into the users’ overall experience, helping us identify areas for potential improvements in usability, engagement, and emotional impact.
-
-% \subsubsection{Proposed Analysis for User Study with VR Questionnaire}
-
-% In the user study, we will assess participants’ experiences using the Tcha-Tokey et al. (2016) questionnaire \cite{TchaTokey2016}. The following metrics will be calculated:
-
-% \textbf{Usability Score (US):} This score will be derived from participants’ responses to the usability-related questions in the questionnaire. Each question is rated on a Likert scale, and the overall score is calculated as:
-
-% \[
-% US = \frac{\sum_{i=1}^{n} Q_i}{n}
-% \]
-
-% where $Q_i$ is the score for each usability question, and $n$ is the total number of usability-related questions.
-
-% \textbf{Overall Experience (OE):} The overall experience score will reflect participants’ general satisfaction and engagement. This will be calculated as:
-
-% \[
-% OE = \frac{\sum_{i=1}^{m} Q_j}{m}
-% \]
-
-% where $Q_j$ is the score for each experience-related question, and $m$ is the total number of experience-related questions.
-
-% \textbf{Immersion Index (II):} The immersion index will be calculated based on participants’ ratings of their sense of presence and immersion within the virtual environment. The formula is:
-
-% \[
-% II = \frac{\sum_{i=1}^{k} I_i}{k}
-% \]
-
-% where $I_i$ is the score for each immersion-related question, and $k$ is the total number of immersion-related questions.
-
-% By combining real-time feedback, Likert-scale questionnaire data, and qualitative insights, we will gain a holistic understanding of user engagement and system usability, providing critical insights for improving our lip-synchronization and user experience.
-
-
 In this portion of the evaluation, participants will interact with a rule-based conversion engine, designed to yield consistent results (necessary for experiment design), these generated texts will be spoken by the Socially Interactive Agent (SIA). 
 
 This study will focus on evaluating whether the proposed approach can outperform existing solutions like the Microsoft TTS API in generating accurate and natural lip-syncing. The primary goal will be to determine if the system can produce better lip-syncing results than those provided by the Microsoft TTS API, which already generates viseme codes and durations for synthesized speech. 
 
-We will conduct the study with an experimental design.
 Participants will be randomly assigned to engage to two conditions: one condition with the SIA using our lipsynch approach, and the other with the SIA using the Microsoft TTS API. Participants will provide feedback on the naturalness, accuracy, and overall user experience of the lip-syncing after their intreaction with the SIA. 
 
 The study will measure key aspects such as perceived naturalness of the lip-syncing, the accuracy of viseme durations, and participant satisfaction. These metrics will help assess whether the proposed system provides a significant improvement over existing solutions.
 
+Participants will be randomly assigned to interact with a socially interactive agent (SIA) under two conditions: one using our lip-sync approach and the other using the Microsoft TTS API for lip synchronization. After the interaction, participants will provide feedback on the naturalness, accuracy, and overall user experience of the lip-syncing.
+
+We will utilize the questionnaire developed by Tcha-Tokey et al.\ (2016) \cite{Tcha-Tokey2016AEnvironments}, which assesses various dimensions of user experience in immersive virtual environments (IVEs), including usability, immersion, engagement, flow, and emotional response. This questionnaire employs Likert-scale items, which are common in user experience research.
+
 This user study will be designed to provide direct, practical feedback on the system’s performance, guiding further development and refinement to achieve the best possible outcomes.
+
+To quantitatively assess participants' experiences, we will compute the following metrics based on their questionnaire responses:
+
+\begin{enumerate}
+    \item \textbf{Usability Score (US):}
+
+    The Usability Score represents the average response to usability-related questions.
+
+    \[
+    \text{US} = \frac{1}{n} \sum_{i=1}^{n} U_i
+    \]
+
+    where:
+
+    \begin{itemize}
+        \item \( U_i \) = participant's response to usability question \( i \) on a Likert scale (e.g., 1--5)
+        \item \( n \) = total number of usability questions
+    \end{itemize}
+
+    Calculating the mean score of Likert-scale responses is a standard practice in usability and user experience research (Norman, 2010) \cite{Norman2010Likert}.
+
+    \item \textbf{Overall Experience Score (OE):}
+
+    The Overall Experience Score reflects participants' general satisfaction and engagement.
+
+    \[
+    \text{OE} = \frac{1}{m} \sum_{j=1}^{m} E_j
+    \]
+
+    where:
+
+    \begin{itemize}
+        \item \( E_j \) = participant's response to experience question \( j \)
+        \item \( m \) = total number of experience questions
+    \end{itemize}
+
+    \item \textbf{Immersion Index (II):}
+
+    The Immersion Index measures participants' sense of presence within the virtual environment.
+
+    \[
+    \text{II} = \frac{1}{p} \sum_{k=1}^{p} I_k
+    \]
+
+    where:
+
+    \begin{itemize}
+        \item \( I_k \) = participant's response to immersion question \( k \)
+        \item \( p \) = total number of immersion questions
+    \end{itemize}
+
+\end{enumerate}
+
+We will calculate the mean and standard deviation for each metric to provide an overview of central tendency and variability. Reliability of the questionnaire will be assessed using Cronbach's alpha (Cronbach, 1951) \cite{Cronbach1951CoefficientTests}:
+
+\[
+\alpha = \frac{N \bar{c}}{\bar{v} + (N - 1)\bar{c}}
+\]
+
+where:
+
+\begin{itemize}
+    \item \( \alpha \) = Cronbach's alpha coefficient
+    \item \( N \) = number of items
+    \item \( \bar{c} \) = average covariance between item pairs
+    \item \( \bar{v} \) = average variance of each item
+\end{itemize}
+
+Comparative analyses between the two groups will be conducted using appropriate statistical tests:
+
+\begin{itemize}
+    \item \textbf{Parametric Tests:} If data are normally distributed, we will use independent samples t-tests to compare group means.
+    \item \textbf{Non-Parametric Tests:} If data are not normally distributed, we will employ the Mann-Whitney U test.
+\end{itemize}
+
+Statistical significance will be set at \( p < 0.05 \). Effect sizes (e.g., Cohen's \( d \)) will also be reported to quantify the magnitude of differences between groups.
+
+By combining quantitative data from the questionnaires and qualitative feedback from participants, we aim to gain a comprehensive understanding of user engagement and system usability. This will provide critical insights for improving our lip-synchronization algorithm and enhancing the overall user experience.
 
 \section{Ethical Considerations}
 
