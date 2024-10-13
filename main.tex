@@ -37,10 +37,10 @@
 \newpage
 
 \begin{abstract} 
-Socially interactive agents (SIAs)  - human-like characters able to have  conversations using verbal and nonverbal communication - have been used in various areas of human--computer interaction. 
+Socially interactive agents (SIAs)  - human-like characters able to have conversations using verbal and nonverbal communication - have been used in various areas of human--computer interaction. 
 Combining SIAs' expressive abilities with the output of large language models (LLMs) enables conversation simulations that directly respond to natural language queries, allowing for more lifelike interactions with less engineering effort (when used without further processing to control their output), when compared to earlier rule-based systems.    
 % While machine learning models are increasingly adept at predicting the mood, sentiment, and affect of human users, the ability to simulate expressive communicative and adaptive human behaviors continues presenting a myriad of challenges in allowing such simulations to act as believable "embodiments" of A.I. agents. 
-One of the factors influencing SIAs' abilities to retain users' engagement hinges on how the auditory and visual stimuli are coordinated.  Thus, in most cases, the experience of listening to these agents' synthesized speech is improved with visual animations of the 3D character's relevant facial movements synchronized with the spoken utterances. We discuss current challenges in simulating natural lip synchronization and propose a system to generate realistic lip, tongue, and jaw movements, as well as ancillary face movements, that can be rendered in real-time for 3D socially interactive agents that can interact with users over the World Wide Web.  We also propose an evaluation methodology for analyzing the lip-synchronization results with a user study.
+One of the factors influencing SIAs' abilities to retain users' engagement hinges on how the auditory and visual stimuli are coordinated.  Thus, in most cases, the experience of listening to these agents' synthesized speech is improved with visual animations of the 3D character's relevant facial movements synchronized with the spoken utterances. We discuss current challenges in simulating natural lip synchronization and propose a system to generate realistic lip, tongue, and jaw movements, as well as ancillary facial movements, that can be rendered in real-time for 3D socially interactive agents that can interact with users over the World Wide Web.  We also propose an evaluation methodology for analyzing the lip-synchronization results, using both an objective and subjective approach.
 \end{abstract}
 
 \newpage
@@ -48,13 +48,16 @@ One of the factors influencing SIAs' abilities to retain users' engagement hinge
 \section{Introduction}
 
 %\subsection{Introduction to Embodied Agents}
-Socially interactive agents (SIAs)\cite{Gratch2021SIArapport} are interactive systems designed to simulate human-like behaviors, but in virtual space using computer graphics.
+Socially interactive agents (SIAs) \cite{lugrin2022handbook}
+%\cite{Gratch2021SIArapport} 
+are interactive systems designed to simulate human-like behaviors, but in a 3-dimensional virtual space generated with computer graphics.
 %or in-real-life (IRL) physical environments by means of robotic systems. 
 Based on the {\em Computers As Social Actors   theory} which states that humans unconsciously apply the same social rules used for human communication to human-computer interaction \cite{Nass1996}, their potential to create more intuitive, engaging, and effective interfaces, such agents have become an increasingly important topic within the field of human-computer interaction (HCI).  The concept of embodied agents extends beyond simple interaction models; these agents can function as fully autonomous cybernetic systems: able to communicate, express emotions, and react adaptively to stimulus, thus simulating aspects of human behavior.  
 
 % \subsubsection{Evolution from ECAs to SIAs}
-{Socially Intelligent Agents} represent an evolution from earlier, well-known embodied conversational agents (ECAs) \cite{Cassell2000}.  While ECAs were designed to facilitate human-computer interaction by providing a more engaging and intuitive interface than traditional text-based or graphical user interface  systems, they were typically represented as 2-dimensional (2D)  characters capable of basic conversation and task management. However, as AI and machine learning technologies advanced, there was a growing need for agents that could understand and respond to more complex social interactions in 3D virtual environments \cite{Gratch2021SIArapport}.
-SIAs are characterized by their autonomy, emotional intelligence, and ability to engage in complex social interactions. Unlike their ECA predecessors, SIAs can detect and respond to users' emotional states, adapt their behavior based on context. These agents are designed to operate in both virtual environments (such as software applications) and physical environments (such as humanoid robots), making them versatile tools for a wide range of applications.
+{Socially Intelligent Agents} represent an evolution from earlier, well-known embodied conversational agents (ECAs) \cite{Cassell2000}.  While ECAs were designed to facilitate human-computer interaction by providing a more engaging and intuitive interface than traditional text-based or graphical user interface  systems, they were represented as 2-dimensional (2D)  cartoonish characters capable of basic conversation and task management. However, as computer graphics, AI and machine learning technologies advanced, there was a growing need for agents that could understand and respond to more complex social interactions in realistic 3D virtual environments \cite{lugrin2022handbook}
+%\cite{Gratch2021SIArapport}.
+SIAs are characterized by their autonomy, emotional intelligence, and ability to engage in complex social interactions. Unlike their ECA predecessors, SIAs can detect and respond to users' emotional states, and adapt their behavior based on context. These agents are designed to operate in both virtual environments (such as software applications) and physical environments (such as humanoid robots), making them versatile tools for a wide range of applications.
 SIAs have been successfully implemented in various fields, demonstrating their potential to enhance user experience. For instance, in customer service, SIAs are used to manage inquiries and resolve issues by understanding the customer's emotional state and responding appropriately \cite{Gratch2021SIArapport}.  These case studies illustrate the significant impact that SIAs can have when effectively integrated into human-computer interaction systems.
 
 % \subsection{Advancements in Emotion Recognition and Empathetic Responses}
@@ -123,13 +126,13 @@ The muscle groups underlying all facial movements
 form 44 AUs for facial expressions and 12 AUs for head
 and gaze directions.  
 
-As discussed in the next Sections, FACS has been used to create physiologically realistic facial animations for 3D SIA character models.
+As discussed in the next Sections, FACS has been used as a reference to create physiologically realistic facial animations for the 3D SIA character models that we will use in this project.
 
 
 \subsection{VISAGE Laboratory Socially Interactive Agents}
 
 The verbal and nonverbal communication skills  of  socially interactive agents and their potential at expressing some level of empathy make them effective in scenarios where traditional interventions might fall short \cite{Lisetti2013}.  
-The VISAGE lab developed multiple prototypes of socially interactive agents used as the main interface of digital health interventions, showing that users were  31\% more likely to use a web-based health intervention when it is delivered by an SIA compared to with a text-only user interface \cite{Lisetti2013}, and that users are significantly more engaged when the SIA allows speakers to speak freely \cite{LisettiNowExperience}.\cite{Yasavur2014}. 
+The VISAGE lab developed multiple prototypes of socially interactive agents used as the main interface of digital health interventions, showing that users were  31\% more likely to use a web-based health intervention when it is delivered by an SIA compared to with a text-only user interface \cite{Lisetti2013}, and that users are significantly more engaged when the SIA allows speakers to speak freely \cite{LisettiNowExperience}\cite{Yasavur2014}. 
 
 \subsubsection{empathic Embodied Virtual Agent (eEVA) Framework}
 The VISAGE lab has developed the empathetic Embodied Virtual Agents (eEVA) system as 
@@ -138,21 +141,21 @@ The VISAGE lab has developed the empathetic Embodied Virtual Agents (eEVA) syste
 \subsubsection{FACSlib}
 \label{sec:facslib}
 
-One of the special features of the eEVA framework is its collection of 25 highly expressive 3-dimensional diverse character models.  The 3D model facial animation library - facslib - was custom-made to specifically address the  main limitations of the many existing 3D models used by the SIA community: namely the models do not provide for facial animations corresponding to the FACS system (see Section \ref{sec:FACS}).
+One of the special features of the eEVA framework is its collection of 25 highly expressive 3-dimensional diverse character models.  The 3D model facial animation library - FACSlib - was custom-made to specifically address the  main limitations of the many existing 3D models used by the SIA community: namely the models do not provide for facial animations corresponding to the FACS system (see Section \ref{sec:FACS}).  It was furthermore developed to be easily rendered over the Internet.
 
-Following a similar method as for the development of HapFACS, an open source  software that enables the control of AU-based animations for animating SIAs \cite{Amini2015}, the VisFACS software was created to enabling the visualization of the 3D characters' facial animations at the level of FACS-based Action Units. 
-VisFACS built upon the foundation laid by HapFACS, introducing a slider UI and was built in the Vue front-end web framework. For interoperability, the VisFacs app operates as a standalone Mac, PC, and Linux app.
+Following a similar method as for the development of HapFACS - an open source  software that enables the control of AU-based animations for animating SIAs \cite{Amini2015} - the VisFACS software was created to enabling the visualization of the 3D characters' facial animations at the level of FACS-based Action Units. 
+VisFACS built upon the foundation laid by HapFACS, introducing a slider UI and was built in the Vue front-end web framework. For interoperability, the VisFACS app operates as a standalone Mac, PC, and Linux app.
 
-\subsection{GPT Super}
+\subsubsection{GPT Super}
 
-The integration of Generative Pre-trained Transformers (GPT) into the eEVA virtual agent framework marked a significant leap forward in the capabilities of these systems. The evolution to GPT Super introduced advanced natural language processing capabilities, enabling virtual agents to engage in free-speech conversations with users.  Pasternark et al. \cite{Pasternak20243DListening} conducted a study demonstrating the application of a 3D multimodal socially interactive agent (SIA) integrated with the Toyota Human Support Robot (HSR). This integration involved utilizing ChatGPT, a GPT-based large language model, to perform active listening during human-robot interactions (HRI). The study showed that the use of GPT Super allowed this virtual agent embedded within a physical robot (the HSR) to detect and express both verbal and non-verbal cues effectively, thereby enhancing user experience and improving rapport-building during interactions. The synthesis of verbal and non-verbal behaviors facilitated more natural and empathetic communication between the robot and human users.
+The integration of Generative Pre-trained Transformers (GPT) into the eEVA virtual agent framework marked a leap forward in the capabilities of the  eEVA framework. The evolution to GPT Super introduced advanced natural language processing capabilities, enabling virtual agents to engage in free-speech conversations with users.  Pasternark et al. \cite{Pasternak20243DListening} conducted a study demonstrating the application of a 3D multimodal socially interactive agent (SIA) integrated with the Toyota Human Support Robot (HSR). This integration involved utilizing ChatGPT, a GPT-based large language model, to perform active listening during human-robot interactions (HRI). The study showed that the use of GPT Super allowed eEVA virtual agent embedded within a physical robot (the HSR), and synchronized with the robot behavior to detect and express both verbal and non-verbal cues effectively, thereby enhancing user experience and improving rapport-building during interactions. The synthesis of verbal and non-verbal behaviors facilitated more natural and empathetic communication between the robot and human users, who otherwise would see a black screen or prompts in command language.
 
 The incorporation of GPT Super into the virtual agent framework enabled the development of a socially intelligent robot capable of autonomous, human-like responses. This advancement in HRI demonstrates the potential of GPT Super in creating adaptive virtual agents that can engage users in free-text or free-speech conversations.  
 
 \section{Related Research}
 \label{sec:relatedResearch}
 
- The proposed project focuses on synthesizing the visual aspects of speech, specifically how facial animations can accurately reflect spoken language. 
+ The proposed project focuses on synthesizing the visual aspects of speech, specifically on how SIAs' (visual) facial animation social cues can accurately reflect SIA's (auditory) spoken language social cues. 
  
  \subsection{Phonemes} 
  \label{sec:phonemes}
@@ -176,7 +179,7 @@ The incorporation of GPT Super into the virtual agent framework enabled the deve
 \end{wrapfigure}
 A viseme (pronounced “vye-seem” and a portmanteau of “visual” and “phoneme”) represents the distinct facial expressions and mouth shapes associated with specific speech sounds or phonemes. One of the pioneering figures in mapping these sounds to their visual counterparts on human faces was \textbf{Cletus Fisher}, whose 1968 research provided a foundational understanding of how consonant sounds are visually perceived and categorized \cite{Fisher1968ConfusionsConsonants.}. Fisher’s work emphasized the classification of consonants into viseme categories based on homophenous consonant confusions observed under controlled conditions, forming \textbf{five viseme categories} based on consonants that were visually indistinguishable when lip-read.
 
-Building on Fisher’s foundation, \textbf{Binnie, Montgomery, and Jackson (1976)} further refined viseme categorization by developing a lipreading screening test that grouped consonants into \textbf{nine homophenous categories} based on place of articulation. Using a set of 20 consonant-vowel syllables, they analyzed the confusion patterns of both normal-hearing and hearing-impaired subjects. The results revealed nine consistent viseme clusters with an overall correct response rate of 79.8\% under ideal viewing conditions \cite{Binnie1976VisualRehabilitation}. Their findings reinforced the idea that place-of-articulation cues are critical for visual speech recognition, aligning with earlier research by \textbf{Woodward and Barber (1960)} \cite{WOODWARD1960PhonemeLipreading}.
+Building on Fisher’s foundation, \textbf{Binnie, Montgomery, and Jackson (1976)} further refined viseme categorization by developing a lipreading screening test that grouped consonants into \textbf{nine homophenous categories} based on place of articulation. Using a set of 20 consonant-vowel syllables, they analyzed the confusion patterns of both normal-hearing and hearing-impaired subjects. The results revealed nine consistent viseme clusters with an overall correct response rate of 79.8\% under ideal viewing conditions \cite{Binnie1976VisualRehabilitation}. Their findings reinforced the idea that place-of-articulation cues are critical for visual speech recognition, aligning with earlier research by \cite{WOODWARD1960PhonemeLipreading}.
 
 \textbf{Massaro (1998)} contributed significantly with his \textit{Fuzzy Logical Model of Perception (FLMP)}, focusing on how auditory and visual cues are integrated during speech perception. Massaro's model has influenced research in the field by demonstrating the importance of combining multiple sources of information—visual and auditory—to create realistic speech animations. His work, which includes the development of the virtual talking face \textit{Baldi}, remains influential in the study of visual speech synthesis and lip-syncing \cite{Massaro1998PerceivingPrinciple}.
 
@@ -184,7 +187,9 @@ Building on these foundations, \textbf{Cappelletta and Harte (2012)} proposed a 
 
 \textbf{Taylor et al. (2012)} introduced a novel approach by redefining visemes as \textbf{dynamic units of visual speech}. Instead of relying on static mouth shapes representing phonemes, Taylor’s dynamic visemes accounted for the movement of speech articulators, such as the lips and jaw, over time. This model naturally incorporated coarticulation effects—where adjacent sounds influence the current viseme’s articulation—and addressed the asynchrony between visual and acoustic speech signals. By analyzing a corpus of real speech data, the study demonstrated that dynamic visemes better represent the complexity of visual speech, leading to more accurate and visually pleasing speech animations \cite{Taylor2012DynamicSpeech}. Subjective evaluations in the study confirmed that animations generated with dynamic visemes were consistently preferred over those using static viseme models.
 
-In our study, we will adopt \textbf{Microsoft TTS-generated visemes} as the baseline metric for evaluating facial animation and speech synchronization. By using Microsoft’s advanced TTS framework, which integrates well-established phoneme-to-viseme mappings, we ensure consistency and compatibility with widely adopted standards in the field. Given the viseme category expansions suggested in the work of \textbf{Xu et al.} and \textbf{Cappelletta and Harte}, we have chosen to implement \textbf{20 visemes} in our system. This balance allows us to capture subtle phonetic distinctions while maintaining practical utility for real-time applications, ensuring improvements in both visual speech recognition and facial animation fidelity.
+% THIS IS DUPLICATED IN SECTION 3.4 
+%In our study, we will adopt \textbf{Microsoft TTS-generated visemes} as the baseline metric for evaluating facial animation and speech synchronization. By using Microsoft’s advanced TTS framework, which integrates well-established phoneme-to-viseme mappings, we ensure consistency and compatibility with widely adopted standards in the field. Given the viseme category expansions suggested in the work of \textbf{Xu et al.} and \textbf{Cappelletta and Harte}, we have chosen to implement \textbf{20 visemes} in our system. This balance allows us to capture subtle phonetic distinctions while maintaining practical utility for real-time applications, ensuring improvements in both visual speech recognition and facial animation fidelity.
+
 \subsection{Viseme Mapping in Digital Animation Production}
 \label{sec:useinprod}
 In offline animation production and real-time applications like embodied agents, viseme mapping techniques are pivotal in achieving synchronized lip movements. These codes, along with their corresponding durations, ensure that animations accurately reflect spoken language, making production processes more efficient and enhancing the realism of virtual characters \cite{Osipa2010StopRight}. Jan Krejsa (2021) specifically cited practical applications in this area, referencing the influential *Stop Staring* book by Jason Osipa, which provides a detailed guide for animators on creating believable facial animations by hand. Osipa's work is widely regarded as a foundational text in the field of facial animation and lip-syncing, offering techniques that are still relevant today for both traditional and procedural methods \cite{Krejsa2019, Krejsa2021}.
@@ -197,21 +202,19 @@ In our study, we will adopt Microsoft Cognitive Services' 21 visemes  as the bas
 
 \subsection{Data-Driven Approaches}
 \label{sec:datadriven}
-Data-driven approaches have gained prominence due to their ability to learn from large datasets and produce highly realistic animations. These methods,   including models like JALI, VisemeNet, and FaceFormer which we discuss next, 
-leverage machine learning techniques to automatically map phonemes to visemes and generate corresponding facial animations.
-
-{\bf JALI (Jaw and Lip Integration)} model  \cite{Edwards2016}  represents a significant advancement in the generation of realistic lip-sync animations, particularly in addressing the challenges of coarticulation.
-
 \begin{wrapfigure}[20]{r}{.5\textwidth}
 \centering
-%\vspace{-mm}
+\vspace{-5mm}
 \includegraphics[width=\linewidth]{jali.png}
 \caption{Speaking styles captured by the JALI viseme field \cite{Edwards2016}.}
 \label{fig:jali-viseme-field}
+\vspace{-15mm}
 \end{wrapfigure}
+Data-driven approaches have gained prominence due to their ability to learn from large datasets and produce highly realistic animations. These methods,   including models like JALI, VisemeNet, and FaceFormer which we discuss next, 
+leverage machine learning techniques to automatically map phonemes to visemes and generate corresponding facial animations.
+{\bf JALI (Jaw and Lip Integration)} model  \cite{Edwards2016}  represents a significant advancement in the generation of realistic lip-sync animations, particularly in addressing the challenges of coarticulation.
 
 The JALI  model integrates procedural and data-driven approaches to generate expressive lip-synchronized facial animations. This system is built upon the popular FACS (Facial Action Coding System) framework \cite{Edwards2020jali-driven, Edwards2016} discussed in Section \ref{sec:relatedResearch}, and its unique feature is the separation of jaw and lip movements, which allows for a more nuanced representation of speech. The JALI workflow takes a speech transcript and audio signal as inputs, and through a combination of forced alignment and audio signal analysis, it generates both viseme codes and action units that are procedurally modulated to animate a 3D character's face.
-
 JALI’s procedural components include the precise control over the jaw and lip on seperate axes, which are modulated based on the audio features like volume, pitch, and formants--those frequency regions of relatively great intensity within a given sound spectrum. Plotting these jaw and lip movement intensities along an x and y axis yields regions consistent with various styles of speech like whispering or yelling. For example, the minimum activation of both jaw and lips would yield a style of speech consistent with "ventriloquism", adding slightly more lip activation would yield "mumbling" whereas slightly more jaw activation would yield "murmuring" (see Figure \ref{fig:jali-viseme-field}). This approach ensures that the resulting animations are both expressive and realistic, closely matching the performance of professional animators and performance capture systems. The JALI system is designed to be integrative, allowing further artistic refinement, and is particularly useful in environments where performance capture might be impractical or where detailed animator control is desired.
 
 \textbf{VisemeNet (2018)} \cite{Zhou2018visemenet} is another data-driven approach, utilizing a Long Short-Term Memory (LSTM) neural network-based model to generate realistic lip-sync animations. The model was trained on several well-known datasets, including BIWI, SAVEE, GRID, TCD-TIMIT, and CREMA-D, to predict viseme sequences from audio inputs. VisemeNet’s architecture also incorporates LSTM layers, which captures temporal dependencies in sequential data. The network architecture is designed to handle complex speech patterns by segmenting the audio into phonetic groups, which are then mapped to corresponding visemes. 
@@ -275,7 +278,6 @@ For example, we can use custom, domain-specific states like "talking," or "liste
 During our evaluation stage (discussed in Section \ref{sec:eval}), data collection and analysis will be managed by React.js, which will handle the dynamic rendering of the interface and the gathering of feedback from users. The data gathered through this interface will be crucial for refining the virtual agent’s behavior and improving the system’s overall performance. 
 
 Real-time interaction with the virtual agent will be supported by the web-based interface, enabling participants to see immediate changes in the lip-syncing as they interact with the system. This real-time feedback loop will be essential for ensuring that the system can be fine-tuned effectively based on user input.
-
 Such technical improvements will furthermore enable an easier of the integration of our novel text-to-phoneme and phoneme-to-viseme modules, which we discuss next.
 
 \subsection{Text-to-Phoneme and Phoneme-to-Viseme Mapping}
@@ -397,93 +399,93 @@ In this portion of the evaluation, participants will interact with a rule-based 
 
 This study will focus on evaluating whether the proposed approach can outperform existing solutions like the Microsoft TTS API in generating accurate and natural lip-syncing. The primary goal will be to determine if the system can produce better lip-syncing results than those provided by the Microsoft TTS API, which already generates viseme codes and durations for synthesized speech. 
 
-Participants will be randomly assigned to engage to two conditions: one condition with the SIA using our lipsynch approach, and the other with the SIA using the Microsoft TTS API. Participants will provide feedback on the naturalness, accuracy, and overall user experience of the lip-syncing after their intreaction with the SIA. 
+Participants will be randomly assigned to engage to two conditions: one condition with the SIA using our lipsynch approach, and the other with the SIA using the Microsoft TTS API. Participants will provide feedback on the naturalness, accuracy, and overall user experience of the lip-syncing after their interaction with the SIA. 
 
 The study will measure key aspects such as perceived naturalness of the lip-syncing, the accuracy of viseme durations, and participant satisfaction. These metrics will help assess whether the proposed system provides a significant improvement over existing solutions.
 
-Participants will be randomly assigned to interact with a socially interactive agent (SIA) under two conditions: one using our lip-sync approach and the other using the Microsoft TTS API for lip synchronization. After the interaction, participants will provide feedback on the naturalness, accuracy, and overall user experience of the lip-syncing.
+% Participants will be randomly assigned to interact with a socially interactive agent (SIA) under two conditions: one using our lip-sync approach and the other using the Microsoft TTS API for lip synchronization. After the interaction, participants will provide feedback on the naturalness, accuracy, and overall user experience of the lip-syncing.
 
-We will utilize the questionnaire developed by Tcha-Tokey et al.\ (2016) \cite{Tcha-Tokey2016AEnvironments}, which assesses various dimensions of user experience in immersive virtual environments (IVEs), including usability, immersion, engagement, flow, and emotional response. This questionnaire employs Likert-scale items, which are common in user experience research.
+% We will utilize the questionnaire developed by Tcha-Tokey et al.\ (2016) \cite{Tcha-Tokey2016AEnvironments}, which assesses various dimensions of user experience in immersive virtual environments (IVEs), including usability, immersion, engagement, flow, and emotional response. This questionnaire employs Likert-scale items, which are common in user experience research.
 
 This user study will be designed to provide direct, practical feedback on the system’s performance, guiding further development and refinement to achieve the best possible outcomes.
 
-To quantitatively assess participants' experiences, we will compute the following metrics based on their questionnaire responses:
+% To quantitatively assess participants' experiences, we will compute the following metrics based on their questionnaire responses:
 
-\begin{enumerate}
-    \item \textbf{Usability Score (US):}
+% \begin{enumerate}
+%     \item \textbf{Usability Score (US):}
 
-    The Usability Score represents the average response to usability-related questions.
+%     The Usability Score represents the average response to usability-related questions.
 
-    \[
-    \text{US} = \frac{1}{n} \sum_{i=1}^{n} U_i
-    \]
+%     \[
+%     \text{US} = \frac{1}{n} \sum_{i=1}^{n} U_i
+%     \]
 
-    where:
+%     where:
 
-    \begin{itemize}
-        \item \( U_i \) = participant's response to usability question \( i \) on a Likert scale (e.g., 1--5)
-        \item \( n \) = total number of usability questions
-    \end{itemize}
+%     \begin{itemize}
+%         \item \( U_i \) = participant's response to usability question \( i \) on a Likert scale (e.g., 1--5)
+%         \item \( n \) = total number of usability questions
+%     \end{itemize}
 
-    Calculating the mean score of Likert-scale responses is a standard practice in usability and user experience research (Norman, 2010) \cite{Norman2010Likert}.
+%     Calculating the mean score of Likert-scale responses is a standard practice in usability and user experience research (Norman, 2010) \cite{Norman2010Likert}.
 
-    \item \textbf{Overall Experience Score (OE):}
+%     \item \textbf{Overall Experience Score (OE):}
 
-    The Overall Experience Score reflects participants' general satisfaction and engagement.
+%     The Overall Experience Score reflects participants' general satisfaction and engagement.
 
-    \[
-    \text{OE} = \frac{1}{m} \sum_{j=1}^{m} E_j
-    \]
+%     \[
+%     \text{OE} = \frac{1}{m} \sum_{j=1}^{m} E_j
+%     \]
 
-    where:
+%     where:
 
-    \begin{itemize}
-        \item \( E_j \) = participant's response to experience question \( j \)
-        \item \( m \) = total number of experience questions
-    \end{itemize}
+%     \begin{itemize}
+%         \item \( E_j \) = participant's response to experience question \( j \)
+%         \item \( m \) = total number of experience questions
+%     \end{itemize}
 
-    \item \textbf{Immersion Index (II):}
+%     \item \textbf{Immersion Index (II):}
 
-    The Immersion Index measures participants' sense of presence within the virtual environment.
+%     The Immersion Index measures participants' sense of presence within the virtual environment.
 
-    \[
-    \text{II} = \frac{1}{p} \sum_{k=1}^{p} I_k
-    \]
+%     \[
+%     \text{II} = \frac{1}{p} \sum_{k=1}^{p} I_k
+%     \]
 
-    where:
+%     where:
 
-    \begin{itemize}
-        \item \( I_k \) = participant's response to immersion question \( k \)
-        \item \( p \) = total number of immersion questions
-    \end{itemize}
+%     \begin{itemize}
+%         \item \( I_k \) = participant's response to immersion question \( k \)
+%         \item \( p \) = total number of immersion questions
+%     \end{itemize}
 
-\end{enumerate}
+% \end{enumerate}
 
-We will calculate the mean and standard deviation for each metric to provide an overview of central tendency and variability. Reliability of the questionnaire will be assessed using Cronbach's alpha (Cronbach, 1951) \cite{Cronbach1951CoefficientTests}:
+% We will calculate the mean and standard deviation for each metric to provide an overview of central tendency and variability. Reliability of the questionnaire will be assessed using Cronbach's alpha (Cronbach, 1951) \cite{Cronbach1951CoefficientTests}:
 
-\[
-\alpha = \frac{N \bar{c}}{\bar{v} + (N - 1)\bar{c}}
-\]
+% \[
+% \alpha = \frac{N \bar{c}}{\bar{v} + (N - 1)\bar{c}}
+% \]
 
-where:
+% where:
 
-\begin{itemize}
-    \item \( \alpha \) = Cronbach's alpha coefficient
-    \item \( N \) = number of items
-    \item \( \bar{c} \) = average covariance between item pairs
-    \item \( \bar{v} \) = average variance of each item
-\end{itemize}
+% \begin{itemize}
+%     \item \( \alpha \) = Cronbach's alpha coefficient
+%     \item \( N \) = number of items
+%     \item \( \bar{c} \) = average covariance between item pairs
+%     \item \( \bar{v} \) = average variance of each item
+% \end{itemize}
 
-Comparative analyses between the two groups will be conducted using appropriate statistical tests:
+% Comparative analyses between the two groups will be conducted using appropriate statistical tests:
 
-\begin{itemize}
-    \item \textbf{Parametric Tests:} If data are normally distributed, we will use independent samples t-tests to compare group means.
-    \item \textbf{Non-Parametric Tests:} If data are not normally distributed, we will employ the Mann-Whitney U test.
-\end{itemize}
+% \begin{itemize}
+%     \item \textbf{Parametric Tests:} If data are normally distributed, we will use independent samples t-tests to compare group means.
+%     \item \textbf{Non-Parametric Tests:} If data are not normally distributed, we will employ the Mann-Whitney U test.
+% \end{itemize}
 
-Statistical significance will be set at \( p < 0.05 \). Effect sizes (e.g., Cohen's \( d \)) will also be reported to quantify the magnitude of differences between groups.
+% Statistical significance will be set at \( p < 0.05 \). Effect sizes (e.g., Cohen's \( d \)) will also be reported to quantify the magnitude of differences between groups.
 
-By combining quantitative data from the questionnaires and qualitative feedback from participants, we aim to gain a comprehensive understanding of user engagement and system usability. This will provide critical insights for improving our lip-synchronization algorithm and enhancing the overall user experience.
+% By combining quantitative data from the questionnaires and qualitative feedback from participants, we aim to gain a comprehensive understanding of user engagement and system usability. This will provide critical insights for improving our lip-synchronization algorithm and enhancing the overall user experience.
 
 \section{Ethical Considerations}
 
